@@ -126,11 +126,11 @@ public class CountryPickerView: NibView {
         countryDetailsLabel.font = font
         countryDetailsLabel.textColor = textColor
         if showCountryCodeInView && showPhoneCodeInView {
-            countryDetailsLabel.text = "(\(selectedCountry.code)) \u{202A}\(selectedCountry.phoneCode)\u{202C}"
+            countryDetailsLabel.text = "(\(selectedCountry.name)) \u{202A}\(selectedCountry.phoneCode)\u{202C}"
         } else if showCountryNameInView && showPhoneCodeInView {
             countryDetailsLabel.text = "(\(selectedCountry.localizedName() ?? selectedCountry.name)) \u{202A}\(selectedCountry.phoneCode)\u{202C}"
         } else if showCountryCodeInView || showPhoneCodeInView || showCountryNameInView {
-            countryDetailsLabel.text = showCountryCodeInView ? selectedCountry.code
+            countryDetailsLabel.text = showCountryCodeInView ? selectedCountry.name
                 : showPhoneCodeInView ? selectedCountry.phoneCode
                 : selectedCountry.localizedName() ?? selectedCountry.name
         } else {
