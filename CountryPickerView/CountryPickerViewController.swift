@@ -222,6 +222,8 @@ extension CountryPickerViewController: UISearchResultsUpdating {
                 indexArray = array
             } else if let array = countries[String(text.capitalized[text.startIndex])] {
                 indexArray = array
+            } else {
+                indexArray = countries.flatMap { $0.value }
             }
 
             searchResults.append(contentsOf: indexArray.filter({
